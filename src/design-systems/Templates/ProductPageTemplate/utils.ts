@@ -1,0 +1,1 @@
+export const VALIDATED_DATE_FORMAT = 'Do MMMM YYYY'

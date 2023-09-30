@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './fonts.css';
+
+@layer base {
+  html,
+  body,
+  :root {
+    /* @apply h-full w-full; */
+    @apply text-neutral-100 dark:text-neutral-800;
+    @apply bg-light dark:bg-dark;
+
+    --color-primary-800: '#0809EC';
+    --color-primary-500: '#8A8BFF';
+  }
+
+  .light input:-webkit-autofill,
+  .light input:-webkit-autofill:focus,
+  .light input:-webkit-autofill:hover,
+  .light input:-webkit-autofill:active {
+    background: white !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:focus,
+  .dark input:-webkit-autofill:hover,
+  .dark input:-webkit-autofill:active {
+    background: #3b3b3b !important;
+    border: none !important;
+    -webkit-box-shadow: 0 0 0 30px #3b3b3b inset !important;
+  }
+
+  input:-internal-autofill-selected {
+    background: white !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+}
+
+@layer components {
+  /* The set of Typography component classes */
+  .typography-h1 {
+    @apply font-RobotoCondensed text-h1 font-bold leading-h1 tracking-h1;
+  }
+
+  .typography-h2 {
+    @apply font-RobotoCondensed text-h2 font-bold leading-h2 tracking-h2;
+  }
+
+  .typography-h3 {
+    @apply font-RobotoCondensed text-h3 font-bold leading-h3 tracking-h3;
+  }
+
+  .typography-h4 {
+    @apply font-RobotoCondensed text-h4 font-bold leading-h4 tracking-h4;
+  }
+
+  .typography-subtitle {
+    @apply font-RobotoCondensed text-subtitle font-normal leading-subtitle tracking-subtitle;
+  }
+
+  .typography-paragraph {
+    @apply font-RobotoCondensed text-paragraph font-normal leading-paragraph tracking-paragraph;
+  }
+
+  .typography-body {
+    @apply font-RobotoCondensed text-body font-normal leading-body tracking-body;
+  }
+
+  .typography-caption {
+    @apply font-RobotoCondensed text-caption font-normal leading-caption tracking-caption;
+  }
+
+  .typography-small {
+    @apply font-RobotoCondensed text-small font-normal leading-small tracking-small;
+  }
+
+  .typography-sm {
+    @apply font-Roboto text-sm font-normal leading-sm tracking-sm;
+  }
+
+  .typography-md {
+    @apply font-Roboto text-md font-normal leading-md tracking-md;
+  }
+
+  .typography-lg {
+    @apply font-Roboto text-lg font-normal leading-lg tracking-lg;
+  }
+
+  .gd-carousel .react-multiple-carousel__arrow--left {
+    @apply -left-3 !important;
+  }
+
+  .gd-carousel .react-multiple-carousel__arrow--right {
+    @apply -right-3 !important;
+  }
+
+  .gd-carousel .react-multiple-carousel__arrow {
+    @apply bg-transparent !important;
+  }
+
+  .gd-carousel .react-multiple-carousel__arrow::before {
+    @apply text-neutral-100 dark:text-neutral-600 !important;
+  }
+
+  .indicator_wrp .react-multi-carousel-dot button {
+    @apply border-neutral-600 bg-neutral-600 dark:border-neutral-400 dark:bg-neutral-400 !important;
+  }
+
+  .indicator_wrp .react-multi-carousel-dot--active button {
+    @apply border-neutral-500 bg-neutral-500 dark:border-neutral-500 dark:bg-neutral-500 !important;
+  }
+
+  .hero-carousel .gd-carousel .react-multiple-carousel__arrow::before {
+    @apply text-neutral-600 !important;
+  }
+  .hero-carousel .gd-carousel div {
+    @apply h-full w-full items-center justify-center !important;
+  }
+
+  .hero-carousel .gd-carousel .react-multiple-carousel__arrow {
+    @apply rounded-full border-2 border-transparent bg-neutral-200 md:min-h-30 md:min-w-30  lg:min-h-40 lg:min-w-40 !important;
+  }
+
+  .hero-carousel .gd-carousel .react-multiple-carousel__arrow--left {
+    @apply md:-left-7 lg:-left-8 xxl:-left-6 !important;
+  }
+
+  .hero-carousel .gd-carousel .react-multiple-carousel__arrow--right {
+    @apply md:-right-7 lg:-right-8 xxl:-right-6 !important;
+  }
+
+  .hero-carousel .indicator_wrp .react-multi-carousel-dot button {
+    @apply h-2 w-2  border-neutral-400 bg-neutral-400 !important;
+  }
+
+  .hero-carousel .indicator_wrp .react-multi-carousel-dot--active button {
+    @apply border-neutral-500 bg-neutral-500 !important;
+  }
+
+  .accordion-button:not(.collapsed) {
+    @apply bg-transparent text-neutral-100 shadow-none dark:text-neutral-700 !important;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    @apply bg-none !important;
+  }
+
+  .accordion-button:not(.collapsed) svg {
+    @apply rotate-180 transition !important;
+  }
+
+  .accordion-header .acc_question_wrp {
+    word-break: break-word;
+  }
+
+  .navBarInput input {
+    @apply !border-0;
+  }
+
+  .offcanvas-backdrop {
+    @apply !bg-neutral-500;
+  }
+
+  body:has(.filterOverlayOverFlowHidden) {
+    overflow: hidden;
+  }
+  body:has(.filterOverlayOverFlowAuto) {
+    overflow: auto;
+  }
+
+  .hero-carousel .gd-carousel .spinner-card {
+    @apply mx-auto h-[320px] w-[320px] rounded-none md:!h-[230px] md:!w-[230px] lg:!h-[310px] lg:!w-[310px] xl:!h-[400px] xl:!w-[400px] xxl:!h-[465px]  xxl:!w-[465px] !important;
+  }
+
+  .spinner-card {
+    background-color: #e2e2e1 !important;
+  }
+  html.dark .spinner-card {
+    background-color: #595959 !important;
+  }
+  .nft-thumbnail-carousel .react-multiple-carousel__arrow--left {
+    @apply left-0;
+  }
+  .nft-thumbnail-carousel .react-multiple-carousel__arrow--right {
+    @apply right-0;
+  }
+  .edit_control_wrp svg.shadow_icon path:first-child {
+    @apply dark:fill-neutral-600 dark:stroke-neutral-600;
+  }
+  .edit_control_wrp svg.shadow_icon path:last-child {
+    @apply dark:fill-neutral-300 dark:stroke-neutral-600;
+  }
+  /* Customize the thumb */
+  .custom-rangebar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #e2e2e1;
+    cursor: pointer;
+  }
+  .custom-rangebar::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background-color: #e2e2e1;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .hide-menu-wrp {
+    @apply mt-1;
+  }
+  .dropdown-with-button[aria-expanded='true'] {
+    @apply rounded-full bg-neutral-600 dark:bg-neutral-100;
+  }
+  .nft-card-dropdown-wrp .relative {
+    position: unset;
+  }
+  .nft-card-dropdown-menu {
+    @apply !right-4 bottom-[29%] !bg-neutral-800 dark:!bg-neutral-300;
+  }
+  .react-tooltip {
+    @apply dark:bg-neutral-600 dark:text-neutral-100;
+  }
+}
